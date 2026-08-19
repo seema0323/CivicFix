@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicFix — Report & Track Civic Issues</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">CF</span><span>CivicFix</span></div>
+    <nav><a href="#report">Report</a><a href="#issues">Track Issues</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="tag">SMART CITY • CITIZEN SERVICES</p>
+        <h1>Report a problem.<br><span>Track the solution.</span></h1>
+        <p class="hero-text">A simple platform for reporting potholes, garbage, broken streetlights and other local civic issues — with transparent status tracking.</p>
+        <a class="btn" href="#report">Report an Issue</a>
+      </div>
+      <div class="hero-card">
+        <div class="mini-title">Community status</div>
+        <div class="big-number" id="totalCount">0</div>
+        <div class="muted">issues reported</div>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div class="muted" id="resolvedText">0 resolved</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b id="reportedCount">0</b><span>Reported</span></div>
+      <div><b id="progressCount">0</b><span>In Progress</span></div>
+      <div><b id="resolvedCount">0</b><span>Resolved</span></div>
+    </section>
+
+    <section id="report" class="section">
+      <div class="section-head">
+        <div><p class="tag">QUICK REPORT</p><h2>Tell us what needs fixing</h2></div>
+      </div>
+      <form id="issueForm" class="form-card">
+        <div class="grid">
+          <label>Issue type
+            <select id="type" required>
+              <option value="">Select issue</option>
+              <option>Pothole</option><option>Garbage</option><option>Broken Streetlight</option>
+              <option>Water Leakage</option><option>Other</option>
+            </select>
+          </label>
+          <label>Location
+            <input id="location" placeholder="e.g. Main Road, Sector 5" required>
+          </label>
+        </div>
+        <label>Short description
+          <textarea id="description" rows="4" placeholder="Describe the issue briefly..." required></textarea>
+        </label>
+        <button class="btn" type="submit">Submit Report</button>
+        <p id="success" class="success"></p>
+      </form>
+    </section>
+
+    <section id="issues" class="section">
+      <div class="section-head row">
+        <div><p class="tag">TRANSPARENT TRACKING</p><h2>Recent reports</h2></div>
+        <select id="filter"><option>All</option><option>Reported</option><option>In Progress</option><option>Resolved</option></select>
+      </div>
+      <div id="issueList" class="issue-list"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div><p class="tag">WHY CIVICFIX?</p><h2>Close the loop between citizens and civic teams.</h2></div>
+      <div class="about-grid">
+        <div><b>01 — Easy reporting</b><p>Citizens can submit an issue with its type, location and a short description.</p></div>
+        <div><b>02 — Clear status</b><p>Every report has a simple status so users can see whether it is reported, in progress or resolved.</p></div>
+        <div><b>03 — Better accountability</b><p>A shared issue list makes unresolved civic problems easier to notice and prioritize.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 CivicFix • Omnikon 2026</footer>
+  <script src="script.js"></script>
+</body>
+</html>
